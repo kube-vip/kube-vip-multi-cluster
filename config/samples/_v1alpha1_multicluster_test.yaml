@@ -1,0 +1,15 @@
+apiVersion: kube-vip.io/v1alpha1
+kind: MultiCluster
+metadata:
+  labels:
+    app.kubernetes.io/name: multicluster
+    app.kubernetes.io/instance: multicluster-sample
+    app.kubernetes.io/part-of: kube-vip-multi-cluster
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kube-vip-multi-cluster
+  name: multicluster-sample
+spec:
+  port: 9990
+  callsign: "federation"
+  rank: 5
+  ready: true

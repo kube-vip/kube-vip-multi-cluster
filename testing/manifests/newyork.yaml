@@ -1,0 +1,36 @@
+apiVersion: kube-vip.io/v1alpha1
+kind: MultiCluster
+metadata:
+  labels:
+    app.kubernetes.io/name: multicluster
+    app.kubernetes.io/instance: multicluster-test1
+    app.kubernetes.io/part-of: kube-vip-multi-cluster
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kube-vip-multi-cluster
+  name: newyork
+spec:
+  port: 9990
+  callsign: "federation"
+  rank: 5
+  ready: true
+  serviceAddress: 172.18.100.100
+  payload: |
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment2
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          containers:
+          - name: nginx
+            image: nginx:latest
+            ports:
+            - containerPort: 80
