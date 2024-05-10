@@ -33,7 +33,7 @@ The port defines which port the multicluster will listen on for incoming connect
 
 `port: 9990`
 
-#### CallSign
+#### CallSign
 
 The callsign is a simple key/string used to designate all members of the cluster should be speaking to one another, if someone joins an existing cluster with a different callsign they wont be allowed to participate.
 
@@ -94,7 +94,7 @@ go run ./testing/clusters/ \
        -forceClean
 ```
 
-### Apply two multicluster manifests
+### Apply two multicluster manifests
 
 ```
 kubectl --context kind-newyork apply -f ./testing/manifests/newyork.yaml
