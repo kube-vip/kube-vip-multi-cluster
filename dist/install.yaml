@@ -456,7 +456,7 @@ spec:
         command:
         - /manager
         image: ghcr.io/kube-vip/kube-vip-multi-cluster:v0.0.1
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         livenessProbe:
           httpGet:
             path: /healthz
