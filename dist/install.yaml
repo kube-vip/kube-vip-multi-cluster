@@ -455,7 +455,7 @@ spec:
       - args: null
         command:
         - /manager
-        image: controller:latest
+        image: ghcr.io/kube-vip/kube-vip-multi-cluster:v0.0.1
         imagePullPolicy: Never
         livenessProbe:
           httpGet:
